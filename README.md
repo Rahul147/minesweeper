@@ -1,2 +1,2 @@
-# minesweeper
-Minesweeper using p5js
+# Minesweeper
+Interactive minesweeper game using p5js
