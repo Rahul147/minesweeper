@@ -17,9 +17,38 @@ function setup() {
         }
     }
 
+    for (let i = 0; i < cols; i++) {
+        grid.push([]);
+        for (let j = 0; j < rows; j++) {
+            grid[i][j].countBees();
+        }
+    }
+
     console.log(grid)
 }
 
+
+function gameOver() {
+    for (var i = 0; i < cols; i++) {
+        for (var j = 0; j < rows; j++) {
+            grid[i][j].reveal();
+        }
+    }
+}
+
+function mousePressed() {
+    for (var i = 0; i < cols; i++) {
+        for (var j = 0; j < rows; j++) {
+            if (grid[i][j].contains(mouseX, mouseY)) {
+                grid[i][j].reveal();
+                if (grid[i][j].bee) {
+                    gameOver();
+                    console.log("GAME OVER");
+                }
+            }
+        }
+    }
+}
 
 function draw() {
     background(255);
