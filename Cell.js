@@ -5,7 +5,7 @@ class Cell {
         this.x = i * w;
         this.y = j * w;
         this.w = w;
-        // 30% change of being a bee
+        // 30% chance of being a bee
         this.bee = (Math.random() < 0.3);
         this.revealed = false;
         this.neighborCount = 0;
